@@ -1,0 +1,31 @@
+aula 26 - Inserindo imagem
+
+imagem no html - uma carga informativa(colocar alt=) mesmo q estiver vazio
+imagem css - apenas o desing, o visual
+ tipos de imagem:
+- .jpg / .jpeg: colocar extensão no html, usado quando tenho muita compressão de cores
+- .png: fotografia, poucas cores e quando precisa de transparência
+- .gif: aquela transparência mais dura(pixelado)
+- .svg: formato vetorial. Não perde a resolução quando ela da zoom
+- .webp: formato novo do google, vantagem de ser comprimido
+
+aula 27 - estruturando layout
+
+div: serve pra criar estrutura, ela n tem valor semântico
+#tag semântica
+header(cabeçalho): título, logotipo, menu
+nav: navegação principal da página que nunca muda
+main: conteúdo principal da página
+footer: rodapé da página. Ex: um footer em cada trecho do artigo
+section: seção da página, mas sem valor semântico, divide o conteúdo em blocos
+article: o ponto central da página, semanticamente falando é a mais importante
+aside: qualquer conteúdo que seria a parte do seu conteúdo, "banner" informando que aquilo está a parte do seu conteúdo
+
+#tag não semântica
+div: utilizada a criar blocos para questões visuais
+span: colocar em destaque dentro de um parágrafo por exemplo
+
+
+
+
+
