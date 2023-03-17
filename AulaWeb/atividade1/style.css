@@ -1,0 +1,9 @@
+.titulo{
+    width: 100%;
+    font-size: larger;
+    background-color: lightblue;
+}
+.estilo{
+    width: 100%;
+    border-radius: 50% / 25%;
+}
