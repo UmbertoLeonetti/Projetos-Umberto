@@ -3,7 +3,32 @@
     font-size: larger;
     background-color: lightblue;
 }
-.estilo{
-    width: 100%;
-    border-radius: 50% / 25%;
+.img {
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+}
+.botao a:hover {
+    color: red;
+}
+.botao2 a:hover {
+  color: orchid;
+}
+.botao3 a:hover {
+  color: gold;
+}
+.menu > li {
+  display: inline-block;
+}
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
 }

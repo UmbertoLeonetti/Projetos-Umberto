@@ -8,27 +8,51 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    /* Umberto Leonetti */
     <header class="titulo">
         <h2>Página principal</h2>
+    </header>
         <nav>
-            <ul>
-                <li><a href="https://www.youtube.com/" target="_blank"></a>  Item 1</li>
-                <li><a href="https://www.cursoemvideo.com/" target="_blank"></a> Item 2</li>
-                <li><a href="https://www.udemy.com/" target="_blank"></a> Item 3</li>
+            <ul class="menu">
+                <li class="botao"><a href="https://www.youtube.com/" target="_blank"> Item 1 </a></li>
+                <li class="botao2"><a href="https://www.cursoemvideo.com/" target="_blank"> Item 2 </a></li>
+                <li class="botao3"><a href="https://github.com/" target="_blank"> Item 3 </a></li>
             </ul>
         </nav>
-    </header>
-    <div class="estilo">
+    <div class="img">
         <img src="img/paisagem.jpg" alt="Imagem de Paisagem1">
     </div>
+    <audio controls>
+        <source src="img/audio.mp3" type="audio/mpeg">
+    </audio><br>
     <table>
-        <thead>
-            <th> Col1 </th>
-            <th> Col2 </th>
-            <th> Col3 </th>
-            <th> Col4 </th>
-            <th> Col5 </th>
-        </thead>
+            <tr>
+                <td> Col1 </td>
+                <td> Col2 </td>
+                <td> Col3 </td>
+                <td> Col4 </td>
+                <td rowspan="2"> Col5 </td>
+            </tr>
+            <tr>
+                <td rowspan="2"> Item1 </td>
+                <td colspan="3"> Item2 </td>
+            </tr>
+            <tr>
+                <td> Info1 </td>
+                <td> Info2 </td>
+                <td> Info3 </td>
+                <td> Info4 </td>
+            </tr>
+            <tr>
+                <td rowspan="2"> NovaInfo1 </td>
+                <td colspan="4"> NovaInfo2 </td>
+            </tr>
+            <tr>
+                <td> NovoItem1 </td>
+                <td> NovoItem2 </td>
+                <td> NovoItem3 </td>
+                <td> NovoItem4 </td>
+            </tr>
     </table>
 </body>
 </html>
