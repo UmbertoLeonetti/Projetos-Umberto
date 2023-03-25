@@ -1,0 +1,162 @@
+body {
+    margin: 0px;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+img {
+    width: 100%;
+}
+
+.estilo {
+    width: 50vw;
+}
+
+p.estilo {
+    background-color: burlywood;
+}
+
+#topo {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.menu > li {
+    display: inline-block;
+}
+
+.botao a:link, .botao a:visited {
+    text-decoration: none;
+    font-weight: bold;
+    background-color: rgb(74, 114, 35);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 5px;
+    border-radius: 50px;
+}
+
+.botao a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.botao a:active {
+    color: black;
+}
+
+.tabela tr:hover {
+    background-color: aqua;
+}
+
+.tabela tr:active {
+    font-weight: bold;
+}
+
+.tabela tr:nth-child(odd) {
+    background-color: lightgrey;
+}
+
+.lista {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.lista li:last-child {
+    font-weight: bold;
+    color: brown;
+}
+
+.lista li:first-child {
+    color: red;
+}
+
+.lista li:nth-child(3) {
+    color: green;
+    font-weight: bold;
+}
+
+div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input {
+    background-color: yellow;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-radius: 25px;
+}
+
+input[type="password"],[type="number"] {
+    background-color: red;
+}
+
+input:focus {
+    background-color: lightblue;
+}
+
+.animacao2 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation: movimento 10s infinite;
+}
+
+@keyframes movimento {
+    0% { background-color: red; top: 0px; left: 0px;}
+    25% { background-color: yellow; top: 0px; left: 100px;}
+    50% { background-color: green; top: 100px; left: 100px;}
+    75% { background-color: blue; top: 100px; left: 0px;}
+    100% { background-color: red; top: 0px; left: 0px;}
+}
+
+.animacao {
+    width: 50vw;
+    height: 200px;
+    background-color: red;
+}
+
+.animacao:hover {
+    animation: corAnimacao 10s infinite;
+}
+
+@keyframes corAnimacao {
+/*    from { background-color: red;}
+    to { background-color: blue;}*/
+    0% { background-color: red;}
+    25% {background-color: yellow;}
+    50% {background-color: green;}
+    75% { background-color: blue;}
+    100% { background-color: red;}
+}
+header {
+    position: sticky;
+    border: 1px solid black;
+    background-color: aquamarine;
+    top: 0px;
+    font-family: 'Alkatra', cursive;
+    font-size: 3em;
+}
+
+@font-face {
+    font-family: 'MinhaFonte';
+    src: url(../fonts/DeliciousHandrawn-Regular.ttf);
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100vw;
+    border: 1px solid black;
+    background-color: aquamarine;
+    font-family: 'MinhaFonte';
+    font-size: 3em;
+}
