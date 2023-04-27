@@ -1,0 +1,24 @@
+.div{
+    margin-bottom: 10px;
+}
+#resultado, #maior{
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.vermelho, .p{
+    background-color: red;
+    color: black;
+}
+
+.verde {
+    background-color: green;
+    color: black;
+}
+
+.amarelo {
+    background-color: yellow;
+    color: black;
+}

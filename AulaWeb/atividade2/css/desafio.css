@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  div {
+    margin: 20px;
+  }
+  
+  label, input, button {
+    font-size: 20px;
+    margin: 10px;
+  }
+  
+  #result {
+    font-size: 30px;
+    margin: 20px;
+    display: flex;
+  }
+  
+  #result div {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 1px solid black;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
