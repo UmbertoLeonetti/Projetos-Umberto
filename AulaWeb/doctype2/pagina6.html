@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/classPessoa.js"></script>
+    <title>Página 6</title>
+</head>
+<body>
+    <main>
+        <a href="index2.html">Index2.html</a>
+        <a href="pagina7.html">Página 7</a>
+        <div id="mensagem"></div>
+        <div>
+            <button onclick="retornaNome()">Retorna "nome"</button>
+            <button onclick="retornaJSON()">Retorna JSON</button>
+            <button onclick="retornaVetor()">Retorna posição 1</button>
+        </div>
+        <div>
+            <input type="text" name="nmPessoa" id="nmPessoa">
+            <input type="date" name="dtNascimento" id="dtNascimento"><br>
+            <button onclick="instanciaPessoa()">Instancia Pessoa</button><br>
+            <input type="text" name="nmCurso" id="nmCurso">
+            <button onclick="instanciaAluno()">Instancia Aluno</button><br>
+            <input type="text" name="nmDepto" id="nmDepto">
+            <button onclick="instanciaProfessor()">Instancia Professor</button>
+        </div>
+    </main>
+</body>
+<script>
+    function instanciaProfessor() {
+        var vProfessor = new Professor(
+            document.getElementById('nmPessoa').value,
+            document.getElementById('dtNascimento').value,
+            document.getElementById('nmDepto').value
+        );
+        console.log(vProfessor);
+        console.log(vProfessor.getIdade());
+        console.log(vProfessor.getNmDepto());
+        console.log(vProfessor.getNmCurso());
+    }
+    function instanciaAluno() {
+        var vAluno = new Aluno(
+            document.getElementById('nmPessoa').value,
+            document.getElementById('dtNascimento').value,
+            document.getElementById('nmCurso').value
+        );
+        console.log(vAluno);
+        console.log(vAluno.getIdade());
+        console.log(vAluno.getNmCurso());
+    }
+    function instanciaPessoa() {
+        var vPessoa = new Pessoa(
+            document.getElementById('nmPessoa').value,
+            document.getElementById('dtNascimento').value
+        );
+        console.log(vPessoa);
+        console.log(vPessoa.getNmPessoa());
+        console.log(vPessoa.nmPessoa);
+        console.log(vPessoa.dtNascimento.getFullYear());
+        console.log("A idade da pessoa é "+vPessoa.getIdade());
+    }
+
+    function retornaVetor() {
+        vetPessoas = JSON.parse(localStorage.getItem("pessoas"));
+        console.log(vetPessoas);
+        document.getElementById("mensagem").innerHTML =
+            vetPessoas[1].codigo+" - "+vetPessoas[1].nome;
+    }
+    function retornaJSON() {
+        var pessoa = JSON.parse(localStorage.getItem("pessoa"));
+        console.log(pessoa);
+        document.getElementById('mensagem').innerHTML =
+            pessoa.nome+" - "+pessoa.idade;
+    }
+    function retornaNome() {
+        document.getElementById('mensagem').innerHTML =
+            localStorage.getItem("nome");
+    }
+    document.getElementById('mensagem').innerHTML = document.cookie;
+</script>
+</html>

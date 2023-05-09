@@ -51,16 +51,16 @@ p.estilo {
     color: black;
 }
 
+.tabela tr:nth-child(odd) {
+    background-color: lightgrey;
+}
+
 .tabela tr:hover {
     background-color: aqua;
 }
 
 .tabela tr:active {
     font-weight: bold;
-}
-
-.tabela tr:nth-child(odd) {
-    background-color: lightgrey;
 }
 
 .lista {
@@ -159,4 +159,112 @@ footer {
     background-color: aquamarine;
     font-family: 'MinhaFonte';
     font-size: 3em;
+}
+
+nav {
+    background-color: blue;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    background-color: darkgray;
+}
+
+nav li {
+    list-style: none;
+}
+
+.menuPrincipal > li {
+    display: inline-block;
+    padding-right: 15px;
+}
+
+.subMenu {
+    /*display: none;*/
+    visibility: hidden;
+    background-color: lightblue;
+    position: fixed;
+}
+
+.subMenu li {
+    padding-bottom: 5px;
+}
+
+.menuPrincipal > li:hover .subMenu {
+    /*display: block;*/
+    visibility: visible;
+}
+
+.exemploFlex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: blue;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.exemploFlex div {
+    background-color: lightblue;
+    font-size: 2em;
+    padding: 20px;
+    margin: 10px;
+    height: 40px;
+}
+
+@media screen and (min-width: 400px) {
+    .exemploGrid {
+        display: grid;
+        /*grid-template-columns: auto auto auto;*/
+        /*grid-template-rows: 50px;*/
+        /*row-gap: 10px;*/
+        /*column-gap: 10px;*/
+        gap: 10px;
+        grid-template: auto / auto auto auto;
+        background-color: blue;
+    }
+    .menuHorizontal {
+        display: block;
+    }
+    .menuHamburguer {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .exemploGrid {
+        display: grid;
+        /*grid-template-columns: auto auto auto;*/
+        /*grid-template-rows: 50px;*/
+        /*row-gap: 10px;*/
+        /*column-gap: 10px;*/
+        gap: 5px;
+        grid-template: auto / auto auto;
+        background-color: green;
+    }
+    .menuHamburguer {
+        display: block;
+        background-color: green;
+    }
+    .menuHorizontal {
+        display: none;
+    }
+}
+
+.exemploGrid div {
+    background-color: lightblue;
+    font-size: 2em;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 0px;
+    text-align: center;
 }
