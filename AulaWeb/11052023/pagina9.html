@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Página 9</title>
+</head>
+<body>
+    <header>
+        Página 9
+    </header>
+    <main>
+        <a href="pagina8.html">Página 8</a>
+    </main>
+    <script>
+        function resolvePromessa(pCumpriu, pQuebrou) {
+            var vDado = Math.floor(Math.random() * 6) + 1;
+            if (vDado == 6) {
+                pCumpriu(vDado);
+            } else {
+                pQuebrou(vDado);
+            }
+        }
+        //var vPromessa1 = new Promise(resolvePromessa);
+        var vPromessa1 = new Promise(
+            (pCumpriu,pQuebrou) => {
+                var vDado = Math.floor(Math.random() * 6) + 1;
+                if (vDado == 6) {
+                    pCumpriu(vDado);
+                } else {
+                    pQuebrou(vDado);
+                }                
+            }
+        );
+        function deuCerto(pValor) {
+            console.log(":) "+pValor);
+        }
+        function deuErrado(pValor) {
+            console.log(":( "+pValor);
+        }
+        //vPromessa1.then(deuCerto).catch(deuErrado);
+        //vPromessa1.then(deuCerto,deuErrado);
+        vPromessa1.then(
+            (pValor) => {
+                console.log(":) "+pValor);
+            },
+            (pValor) => {
+                console.log(":( "+pValor);
+            }
+        );
+
+        var vPromessa2 = new Promise(
+            (pCumpriu,pQuebrou) => {
+                console.log("Entrou em vPromessa2");
+                setTimeout(pCumpriu,Math.random()*2000,'vPromessa2');
+            }
+        );
+        var vPromessa3 = new Promise(
+            (pCumpriu,pQuebrou) => {
+                console.log("Entrou em vPromessa3");
+                setTimeout(pCumpriu,Math.random()*2000,'vPromessa3');
+            }
+        );
+        var vPromessa4 = new Promise(
+            (pCumpriu,pQuebrou) => {
+                console.log("Entrou em vPromessa4");
+                setTimeout(pCumpriu,Math.random()*2000,'vPromessa4');
+            }
+        );
+        //vPromessa2.then((pNome) => console.log(pNome));
+        //vPromessa3.then((pNome) => console.log(pNome));
+        //vPromessa4.then((pNome) => console.log(pNome));
+
+        Promise.race([vPromessa2,vPromessa3,vPromessa4]).then(
+            (pCampeao) => {
+                console.log(pCampeao);
+            }
+        );
+    </script>
+</body>
+</html>

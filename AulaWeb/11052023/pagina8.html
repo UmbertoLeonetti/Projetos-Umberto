@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Página 8</title>
+</head>
+<body>
+    <header>Página 8</header>
+    <main>
+        <div>
+            <a href="pagina7.html">Página 7</a>
+            <a href="pagina9.html">Página 9</a>
+        </div>
+    </main>
+    <script>
+        //const vetNumeros = [321, 654, 987, 564, 123];
+        const vetNumeros = [321, { id: 1, nome: "Cardoso" }, 987, 564, 'Marcos'];
+        /*var item0 = vetNumeros[0];
+        var item1 = vetNumeros[1];
+        var item4 = vetNumeros[4];*/
+        var [item0,item1,,,item4] = vetNumeros;
+        console.log(item0+' - '+item1.nome+' - '+item4);
+
+        const veiculo1 = {
+            marca: "Ford",
+            modelo: "Mustang",
+            ano: 1976,
+            proprietario: {
+                prenome: "Marcos",
+                sobrenome: "Cardoso"
+            }
+        };
+
+        function trataVeiculo(pVeiculo) {
+            console.log("Veículo modelo "+pVeiculo.modelo+" pertence a "+pVeiculo.proprietario.prenome+" "+pVeiculo.proprietario.sobrenome);
+        }
+        trataVeiculo(veiculo1);
+
+        function trataVeiculo2({ modelo, proprietario: { prenome, sobrenome } }) {
+            console.log("Veículo modelo "+modelo+" pertence a "+prenome+" "+sobrenome);
+        }
+        trataVeiculo2(veiculo1);
+
+        const vet1 = [0, 1, 2];
+        const vet2 = [7, 8, 9];
+        const vet3 = [...vet1,...vet2];
+        console.log(vet3);
+        var [item0,item1,...vet4] = vet3;
+        console.log(item0+' - '+item1);
+        console.log(vet4);
+
+        const veiculo2 = {
+            cor: "azul",
+            cilindros: 8,
+            combustivel: "gasolina",
+            ano: 2023
+        };
+        var veiculo3 = {...veiculo1,...veiculo2};
+        console.log(veiculo3);
+
+        var mix1 = {...vet1, ...veiculo2};
+        console.log(mix1);
+        var mix2 = [...vet2, veiculo1];
+        console.log(mix2);
+        console.log(mix2[0]+' - '+mix2[3].modelo);
+
+        var numero = 5;
+        if (numero % 2 == 0) {
+            mensagem = "É par!";
+        } else {
+            mensagem = "É ímpar!";
+        }
+        console.log(mensagem);
+        mensagem = (numero % 2 == 0) ? "É par!" : "É ímpar!" ;
+        console.log(mensagem);
+
+    </script>
+    <script type="module">
+        import mostraConsole from './js/functions.js';
+        mostraConsole('Teste!');
+    </script>
+</body>
+</html>

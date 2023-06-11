@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Exemplo JavaScript</title>
+    <style>
+        .classe1 {
+            background-color: blue;
+            font-size: 1.5em;
+        }
+
+        .classe2 {
+            color: yellow;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            /*font-size: 2em;*/
+        }
+
+        .classe3 {
+            border: 1px solid black;
+        }
+    </style>
+    <script src="js/scripts.js"></script>
+    <script>
+        var x = 5;
+        const y = 7;
+        console.log('x + y = '+(x+y));
+        console.log('x + y = '+x+y);
+        x = 'Marcos';
+        console.log('x + y = '+(x+y));
+        //y = 8;
+        /*
+        Comentário mais longo
+        */
+
+        x = 7;
+        if (x == y) {
+            console.log('x e y são iguais!');
+        } else {
+            console.log('x e y são diferentes!');
+        }
+        x = '7';
+        if (x == y) {
+            console.log('x e y são valores iguais!');
+        } else {
+            console.log('x e y são valores diferentes!');
+        }
+        if (x === y) {
+            console.log('x e y tem valores e tipos iguais!');
+        } else {
+            console.log('x e y tem valores ou tipos diferentes!');
+        }
+
+        /*
+        ==      !=
+        ===     !==
+        >   >=  <   <=
+        AND - &&
+        OR  - ||
+        NOT - !
+        */
+
+        var a = 5;
+        a++;
+        console.log(a);
+        a--;
+        console.log(a);
+        a = a * 2;
+        console.log(a);
+        a = a / 2;
+        console.log(a);
+        a *= 2;
+        console.log(a);
+        a /= 2;
+        console.log(a);
+
+        function mostraMsg() {
+            alert("Olá, mundo tb!");
+        }
+
+        function alteraButton() {
+            document.getElementById('button1').innerHTML = 'Novo caption';
+        }
+
+        var nrParagrafo = 1;
+        function criaParagrafo() {
+            const novoParagrafo = document.createElement('p');
+            novoParagrafo.innerHTML = 'Novo parágrafo '+nrParagrafo;
+            novoParagrafo.classList.add('classe1');
+            nrParagrafo++;
+            document.getElementById('div3').appendChild(novoParagrafo);
+        }
+
+        function removeParagrafo() {
+            document.getElementById('div3').removeChild(
+                document.getElementById('div3').lastChild
+            );
+        }
+
+        function armazenaCookie() {
+            document.cookie = "login="+
+              document.getElementById('login').value;
+            document.cookie = "outroCookie=outroValor";
+            alert('cookie armazenado!');
+        }
+        function armazenaStorage1() {
+            localStorage.setItem("nome",document.getElementById("nome").value);
+            localStorage.setItem("idade",document.getElementById("idade").value);
+            alert("Valores armazenados!");
+        }
+        function armazenaStorage2() {
+            localStorage.setItem("pessoa",
+                '{ "nome" : "'+
+                    document.getElementById("nome").value+'",'+
+                '  "idade" : '+
+                    document.getElementById("idade").value+'}'
+            );
+        }
+        function armazenaStorage3() {
+            const nome = document.getElementById("nome").value;
+            const idade = document.getElementById("idade").value;
+            localStorage.setItem("pessoas",
+                "["+
+                "{ \"codigo\" : 1, \"nome\" : \""+nome+"\", \"idade\" : "+idade+" },"+
+                "{ \"codigo\" : 2, \"nome\" : \""+nome+"\", \"idade\" : "+idade+" }"
+                +"]"
+            );
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <button onclick="alert('Olá, mundo!')" id="button1">Clique aqui!</button><br>
+        <div onclick="mostraMsg()">Clique aqui tb!</div><br>
+        <a href="#" onclick="mostraMsg2('Olá, mundo, mais uma vez!')">Clique aqui mais uma vez!</a><br>
+        <button onclick="alteraButton()">Altera button acima!</button>
+        <div id="div1" class="classe1">Texto da div.</div><br>
+        <button onclick="document.getElementById('div1').classList.add('classe2')">Adiciona estilo</button>
+        <button onclick="document.getElementById('div1').classList.remove('classe1')">Remove classe</button>
+        <button onclick="document.getElementById('div1').classList.toggle('classe3')">Toggle classe</button>
+        <script>
+            document.getElementById('div1').innerHTML = 'Novo conteúdo da div';
+        </script>
+        <div id="div2">Novo div na página</div><br>
+        <button onclick="document.getElementById('div2').style.display='none'">Esconde div acima</button>
+        <button onclick="document.getElementById('div2').style.display='block'">Mostra div</button>
+        <button onclick="document.getElementById('div2').style.backgroundColor='green'">Muda cor de fundo</button><br>
+        <div id="div3"></div><br>
+        <button onclick="criaParagrafo()">Cria parágrafo</button>
+        <button onclick="removeParagrafo()">Remove parágrafo</button>
+        <div>
+            <input type="text" name="login" id="login">
+            <button onclick="armazenaCookie()">Armazena cookie</button>
+            <p><a href="pagina6.html">Página 6</a></p>
+        </div>
+        <div>
+            <input type="text" name="nome" id="nome">
+            <input type="number" name="idade" id="idade"><br>
+            <button onclick="armazenaStorage1()">Armazena storage forma 1</button>
+            <button onclick="armazenaStorage2()">Armazena storage forma 2</button>
+            <button onclick="armazenaStorage3()">Armazena storage forma 3</button>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Página 7</title>
+</head>
+<body>
+    <header>
+        Página 7
+    </header>
+    <main>
+        <a href="pagina6.html">Página 6</a>
+        <a href="pagina8.html">Página 8</a>
+        <div id="hora"></div>
+        <div>
+            <button onclick="funcao1()">Chama função 1</button>
+            <button onclick="x()">Chama função x()</button><br>
+            <button onclick="chamaCallback(funcao1,null)">Chama Callback1</button>
+            <button onclick="chamaCallback(x,null)">Chama Callback2</button><br>
+            <button onclick="chamaCallback(y,5)">Chama Callback3</button>
+            <button onclick="chamaCallback(y,'Marcos')">Chama Callback3</button><br>
+            <button onclick="mostraVetor()">Mostra vetor</button>
+        </div>
+    </main>
+</body>
+<script>
+    function mostraHora() {
+        var vHora = new Date();
+        document.getElementById("hora").innerHTML =
+            vHora.getHours()+":"+vHora.getMinutes()+":"+vHora.getSeconds();
+    }
+    //setInterval(mostraHora,1000);
+    setInterval(
+        () => {
+            var vHora = new Date();
+            document.getElementById("hora").innerHTML =
+            vHora.getHours()+":"+vHora.getMinutes()+":"+vHora.getSeconds();
+        },
+        1000
+    );
+    function funcao1() {
+        console.log('Chamou função1!');
+    }
+/*
+    var x = function() {
+        console.log("Chamou função x()!");
+    }
+*/
+/*
+    var x = () => {
+        console.log("Chamou função x()!");
+    }
+*/
+    var x = () => console.log("Chamou função x()!");
+    var y = (parametro) => console.log("Chamou a função y com parâmetro "+parametro);
+
+    function chamaCallback(pFuncao,pParametro) {
+        pFuncao(pParametro);
+    }
+
+    function trataItemVetor(pValor, pInd) {
+        console.log("Posição ["+pInd+"] => '"+pValor+"'");
+    }
+
+    function mostraVetor() {
+        var vetor = ['Mesa','Caneta','Quadro','Carro'];
+        console.log(vetor);
+        /*vetor.forEach(
+            (pValor,pInd) => {
+                console.log("Posição ["+pInd+"] => '"+pValor+"'");
+            }
+        );*/
+        vetor.forEach(trataItemVetor);
+    }
+</script>
+</html>
